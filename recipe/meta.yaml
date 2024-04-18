@@ -8,7 +8,7 @@ package:
 source:
   - url: https://pypi.io/packages/source/s/solara/solara-{{ version }}.tar.gz
     sha256: 86ca619ce2e5209ebe0bda9f6f13036eac045dfea2a5f11def336f51e93d136f
-    folder: solara
+    folder: packages/solara-meta
   - url: https://pypi.io/packages/source/s/solara_assets/solara_assets-{{ version }}.tar.gz
     sha256: 2aa3b6c9fae3a9843be06820f4d5cbe78bd681f5173a70dcb2d0872abbc5735a
     folder: solara_assets
@@ -61,7 +61,7 @@ outputs:
       run_constrained:
         # Can't use {{ pin_subpackage("solara-assets", exact=True) }}
         # as the hashes are different
-        # TODO: revisit after https://github.com/conda-forge/staged-recipes/issues/23382
+        # TODO: revisit after https://github.com/conda/conda-build/issues/4415
         - solara-assets ={{ version }}=*_{{ build }}
     test:
       imports:
