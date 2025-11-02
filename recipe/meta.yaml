@@ -35,7 +35,8 @@ outputs:
         python -m pip install -vv --no-deps .
     requirements:
       host:
-        - python {{ python_min }}
+        # FIXME: Remove pin - https://github.com/widgetti/solara/issues/1107
+        - python {{ python_min }},<3.14
         - hatchling
         - pip
       run:
