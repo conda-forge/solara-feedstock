@@ -57,6 +57,7 @@ outputs:
         - pip check
         - solara --help
       requires:
+        - python {{ python_min }}
         - pip
 
   - name: solara-ui
@@ -94,6 +95,7 @@ outputs:
       commands:
         - pip check
       requires:
+        - python {{ python_min }}
         - pip
 
   - name: solara-server
@@ -139,6 +141,7 @@ outputs:
         - pip check
         - solara --help
       requires:
+        - python {{ python_min }}
         - pip
 
   - name: solara-assets
