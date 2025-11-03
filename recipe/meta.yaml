@@ -1,4 +1,4 @@
-{% set version = "1.51.1" %}
+{% set version = "1.54.0" %}
 {% set build = 0 %}
 
 package:
@@ -7,16 +7,16 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/s/solara/solara-{{ version }}.tar.gz
-    sha256: 6e3b535717d38e0a1506b2609b312a0832ff4f26616276990b053ac688552ebf
+    sha256: e15c5476a1a3e94554441599d3e95d63c72622e85795692458130bba2289b7d4
     folder: solara
   - url: https://pypi.org/packages/source/s/solara-ui/solara_ui-{{ version }}.tar.gz
-    sha256: 24d7d8b8d966220f83ed6605f79abe268174ac7a04fe593286cb5677a24dc78c
+    sha256: bac58bb6ff2d15c5f2e2abc74bf2f3d079fdba6ad939c72c89a67bb7e1ae9a53
     folder: solara_ui
   - url: https://pypi.org/packages/source/s/solara-server/solara_server-{{ version }}.tar.gz
-    sha256: 873850f56b160bc64c77331475ce6a317721630a4e3b55bf9ce7d090b42d2462
+    sha256: 7537209a2178cf8b7a474d71e43ccb7575298ee5f4b8b21675aa790870ba1296
     folder: solara_server
   - url: https://pypi.org/packages/source/s/solara_assets/solara_assets-{{ version }}.tar.gz
-    sha256: 7075540c6df3d99480428c8abcce07d177afc826e9faa0f69e79bc82edb280e2
+    sha256: 4cbccf43f2c051491b4da7e2261632ee413306908f7c3781945f0ad23df71e39
     folder: solara_assets
 
 build:
@@ -35,7 +35,8 @@ outputs:
         python -m pip install -vv --no-deps .
     requirements:
       host:
-        - python {{ python_min }}
+        # FIXME: Remove pin - https://github.com/widgetti/solara/issues/1107
+        - python {{ python_min }},<3.14
         - hatchling
         - pip
       run:
@@ -57,6 +58,7 @@ outputs:
         - pip check
         - solara --help
       requires:
+        - python {{ python_min }}
         - pip
 
   - name: solara-ui
@@ -94,6 +96,7 @@ outputs:
       commands:
         - pip check
       requires:
+        - python {{ python_min }}
         - pip
 
   - name: solara-server
@@ -139,6 +142,7 @@ outputs:
         - pip check
         - solara --help
       requires:
+        - python {{ python_min }}
         - pip
 
   - name: solara-assets
