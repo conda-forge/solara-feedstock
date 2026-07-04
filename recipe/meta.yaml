@@ -1,4 +1,4 @@
-{% set version = "1.57.3" %}
+{% set version = "1.58.0" %}
 {% set build = 0 %}
 
 package:
@@ -7,16 +7,16 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/s/solara/solara-{{ version }}.tar.gz
-    sha256: c882541409ab4cf927eda21cb5fd815f04e88acefb9a697a272594c621dc983a
+    sha256: 31deb1e9b60ab66367fb500771ad83fd8008b65eadf180005834c02975a37da1
     folder: solara
   - url: https://pypi.org/packages/source/s/solara-ui/solara_ui-{{ version }}.tar.gz
-    sha256: 8e93315547451480cf4a37b785cbf1a0e44fd2ef5b417883b5f0a47cce1c08ac
+    sha256: 5bcf4ce0f2025bffd8df25b7f3b4b8c2b25cda493e4211b5ead11f7e814fc857
     folder: solara_ui
   - url: https://pypi.org/packages/source/s/solara-server/solara_server-{{ version }}.tar.gz
-    sha256: 184e34ad727da0aa83190c33db91d34b16eb230d20658410d3343c85810ced68
+    sha256: a003d20e84e330d191fba9f2b387a515a0cfe2300eb6871cf011f8bd53e85506
     folder: solara_server
   - url: https://pypi.org/packages/source/s/solara_assets/solara_assets-{{ version }}.tar.gz
-    sha256: f34fb83ed7949cfce14d57be759ca02263c0d293df00aca517bf38d1228c068f
+    sha256: f54495eaee3592c84f557a511f2655958de0100c90c829e7e79fd71d38b8398a
     folder: solara_assets
 
 build:
